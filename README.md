@@ -1,50 +1,59 @@
+# Food Security and Homeless Population Analysis - BH
 
-# Análise de Segurança Alimentar e População em Situação de Rua - BH
+This project was developed as the final assignment for the **Introduction to Databases (2025/2)** course at UFMG.
 
-Este projeto foi desenvolvido como trabalho final da disciplina de **Introdução a Banco de Dados (2025/2)** da UFMG.
+The goal was to integrate and analyze public data about the homeless population in Belo Horizonte and the availability of food security facilities (community restaurants), identifying gaps in social assistance and demographic patterns.
 
-O objetivo foi integrar e analisar dados públicos sobre a população em situação de rua de Belo Horizonte e a disponibilidade de equipamentos de segurança alimentar (restaurantes comunitários), identificando lacunas na assistência social e padrões demográficos.
+---
 
-## 👥 Autores
+## Objectives and Scope
 
-- Marney Melo  
-- Rafael Miranda  
-- Theo Duarte  
-- Victor Kaizer  
-- Vinícius Rocha  
+The system connects data from homeless people (Cadastro Único), CRAS (Social Assistance Reference Centers), and community restaurants. The focus was to answer questions such as:
 
-## Objetivos e Escopo
+* What is the availability of restaurants for the homeless population in each administrative region?
+* What is the profile of time spent on the streets (time vs. age)?
+* Is there a correlation between race, education, and time on the streets?
+* Is it viable to create policies for returning to home cities based on family ties?
 
-O sistema relaciona dados de moradores de rua (Cadastro Único), CRAS (Centro de Referência de Assistência Social) e restaurantes comunitários. O foco foi responder a perguntas como:
+---
 
-- Qual a disponibilidade de restaurantes para a população de rua em cada região administrativa?  
-- Qual o perfil de permanência nas ruas (tempo x idade)?  
-- Existe correlação entre raça, escolaridade e tempo de rua?  
-- Qual a viabilidade de políticas de retorno à cidade de origem baseada em vínculos familiares?  
+## Methodology and Technologies
 
-## Metodologia e Tecnologias
+* **Database:** PostgreSQL
+* **Modeling:** Entity-Relationship (ER) Model and normalized Relational Model
+* **Spatial Integration:** Use of Spatial Join to link the geographic location of restaurants to the Administrative Regions of BH
+* **ETL:** Data cleaning (sanitization), handling composite primary keys for CRAS with duplicate names, and importing via temporary tables
 
-- **Banco de Dados:** PostgreSQL  
-- **Modelagem:** Modelo Entidade-Relacionamento (ER) e Relacional normalizado  
-- **Integração Espacial:** Utilização de Spatial Join para associar a posição geográfica dos restaurantes aos polígonos das Regiões Administrativas de BH  
-- **ETL:** Limpeza de dados (sanitização), tratamento de chaves primárias compostas para CRAS com nomes duplicados e importação via tabelas temporárias  
+---
 
-## 📊 Principais Resultados da Análise
+## Main Analysis Results
 
-1. **Déficit Periférico:** Regiões como **Noroeste** e **Leste** apresentam maior sobrecarga (mais moradores de rua por restaurante), indicando urgência de políticas públicas nessas áreas.  
-2. **Vínculos Familiares:** Cerca de **66%** dos moradores possuem vínculos familiares rompidos ou frágeis, tornando políticas de retorno à cidade natal pouco eficazes sem suporte prévio.  
-3. **Perfil Etário e Racial:**
-   - Jovens tendem a ter entrada recente na situação de rua (menos de 6 meses), enquanto idosos apresentam quadros crônicos.  
-   - A população negra/parda em situação de rua apresenta índices de escolaridade significativamente menores que a população branca, evidenciando barreiras estruturais.  
+1. **Peripheral Deficit:** Regions like **Noroeste** and **Leste** have the highest "overload" (more homeless people per restaurant), showing an urgent need for public policies in these areas.
+2. **Family Ties:** About **66%** of the residents have broken or fragile family ties, making "return-to-hometown" policies less effective without prior support.
+3. **Age and Racial Profile:**
+* Young people tend to have entered homelessness recently (less than 6 months), while the elderly show chronic situations.
+* The black/mixed-race population on the streets has significantly lower education levels than the white population, showing structural barriers.
 
-## Estrutura do Repositório
+---
+
+## Repository Structure
+
 ```text
 /
 ├── database/
-│   └── backup.sql       # Dump completo do banco de dados (PostgreSQL)
+│   └── backup.sql       # Full database dump (PostgreSQL)
 ├── docs/
 │   ├── Relatorio_pt1.pdf
 │   ├── Relatorio_pt2.pdf
 │   └── Apresentacao_Final.pdf
 └── README.md
+
 ```
+
+## Authors
+
+  * **Marney Melo** - [MarneyMelo](https://github.com/MarneyMelo)
+  * **Rafael Miranda** - [RRafaelMMiranda](https://github.com/RRafaelMMiranda)
+  * **Theo Duarte** - [theolara272727](https://github.com/theolara272727)
+  * **Victor Kaizer** - [KaizerBlank](https://github.com/KaizerBlank)
+  * **Vinicius Rochar** - [vrrocha-scs](https://github.com/vrrocha-scs)
